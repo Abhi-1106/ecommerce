@@ -42,7 +42,7 @@ export default async function ProductPage({ params }: { params: { id: string } }
             <span className="text-sm text-muted-foreground ml-4">Category: {product.category}</span>
           </div>
 
-          <p className="text-2xl font-bold mt-2 mb-4">${product.price.toFixed(2)}</p>
+          <p className="text-2xl font-bold mt-2 mb-4">₹{product.price}</p>
 
           <div className="prose max-w-none mb-6">
             <p>{product.description}</p>
@@ -101,7 +101,7 @@ async function RelatedProducts({
             <div className="p-4">
               <h3 className="font-medium">{product.name}</h3>
               <p className="text-sm text-muted-foreground">{product.category}</p>
-              <p className="font-bold mt-2">${product.price.toFixed(2)}</p>
+              <p className="font-bold mt-2">₹{product.price}</p>
             </div>
           </div>
         </Link>

@@ -5,11 +5,11 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { useCart } from "@/components/cart-provider"
-import type { Product } from "@/lib/types"
 import { useState } from "react"
 import { Check, ShoppingCart } from "lucide-react"
+import type { Product } from "@/lib/types"
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function FeaturedProductCard({ product }: { product: Product }) {
   const { addToCart } = useCart()
   const [isAdded, setIsAdded] = useState(false)
 
@@ -27,7 +27,7 @@ export default function ProductCard({ product }: { product: Product }) {
   }
 
   return (
-    <Card className="overflow-hidden">
+    <Card className="overflow-hidden hover:shadow-lg transition-shadow">
       <Link href={`/products/${product._id}`} className="block">
         <div className="aspect-square relative">
           <Image

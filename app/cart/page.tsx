@@ -26,10 +26,8 @@ export default function CartPage() {
     setIsCheckingOut(true)
     // In a real app, you would redirect to a checkout page or process
     setTimeout(() => {
-      clearCart()
-      router.push("/checkout/success")
-      setIsCheckingOut(false)
-    }, 2000)
+      router.push("/checkout/payment")
+    }, 1000)
   }
 
   if (cartItems.length === 0) {
@@ -65,7 +63,7 @@ export default function CartPage() {
               <div className="flex-1 flex flex-col sm:flex-row justify-between">
                 <div>
                   <h3 className="font-medium">{item.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-2">Unit Price: ${item.price.toFixed(2)}</p>
+                  <p className="text-sm text-muted-foreground mb-2">Unit Price: ₹{item.price}</p>
 
                   <div className="flex items-center space-x-2">
                     <Button
@@ -100,7 +98,7 @@ export default function CartPage() {
                 </div>
 
                 <div className="flex flex-row sm:flex-col justify-between items-end mt-4 sm:mt-0">
-                  <p className="font-bold">${(item.price * item.quantity).toFixed(2)}</p>
+                  <p className="font-bold">₹{item.price * item.quantity}</p>
                   <Button
                     variant="ghost"
                     size="icon"
@@ -123,19 +121,19 @@ export default function CartPage() {
             <div className="space-y-4">
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>₹{subtotal}</span>
               </div>
 
               <div className="flex justify-between">
                 <span>Shipping</span>
-                <span>Calculated at checkout</span>
+                <span>Free</span>
               </div>
 
               <Separator />
 
               <div className="flex justify-between font-bold">
                 <span>Total</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>₹{subtotal}</span>
               </div>
 
               <Button

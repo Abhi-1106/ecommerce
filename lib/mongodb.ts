@@ -2,7 +2,7 @@ import { MongoClient, ObjectId } from "mongodb"
 import type { Product, User, Order } from "@/lib/types"
 
 // Connection URL
-const url = process.env.MONGODB_URI || "mongodb://localhost:27017"
+const url = "mongodb+srv://123:123321@cluster0.04jn701.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 const client = new MongoClient(url)
 const dbName = "organic-market"
 
