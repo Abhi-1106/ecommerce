@@ -15,7 +15,7 @@ export default function AboutPage() {
 
           <div className="relative w-full h-64 md:h-96 mb-8">
             <Image
-              src="/placeholder.svg?height=400&width=800"
+              src="app\about\Song Cover.jpg?height=400&width=800"
               alt="Organic farm"
               fill
               className="object-cover rounded-lg"
